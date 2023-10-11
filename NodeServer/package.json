@@ -1,0 +1,23 @@
+{
+  "name": "translationapi",
+  "version": "1.0.0",
+  "description": "Node Authentication server for API transactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insaneonai/SIH-2023.git"
+  },
+  "keywords": [
+    "Transaltion",
+    "API"
+  ],
+  "author": "jeydev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insaneonai/SIH-2023/issues"
+  },
+  "homepage": "https://github.com/insaneonai/SIH-2023#readme"
+}
