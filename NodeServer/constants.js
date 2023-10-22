@@ -1,0 +1,1 @@
+export const DB_URL = "mongodb+srv://ByteLinguists:NwHTYa7ClpTQTxPB@bytelinguists.m9ebego.mongodb.net";

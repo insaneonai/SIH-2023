@@ -14,6 +14,13 @@
     "Transaltion",
     "API"
   ],
+  "dependencies": {
+    "express": "*",
+    "mongoose":"*",
+    "bcrypt":"*",
+    "crypto":"*"
+},
+  "type": "module",
   "author": "jeydev",
   "license": "ISC",
   "bugs": {
