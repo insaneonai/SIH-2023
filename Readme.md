@@ -4,6 +4,7 @@
 
 This repository contains the backend code for authentication, email verification, and cookie validation in Node.js, along with a Python server script for a Transformer model that translates English to Hindi and performs inference using 8-bit quantization.
 
+# This is a Prototype Of my SIH (Smart India Hackathon) Project.
 
 # Features
 
