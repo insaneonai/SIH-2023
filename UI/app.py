@@ -3,7 +3,7 @@ import requests
 
 
 def translate(english_text,url="https://f9f4-34-27-215-117.ngrok-free.app/translate"):
-    st.session_state["hindi"] = requests.get(url,params={"English_text":english_text}).json()["Hindi_text"]
+    st.session_state["hindi"] = requests.get(url,params={"English_text":english_text},timeout=30).json()["Hindi_text"]
 
 
 st.header("ByteLinguists Translation app")

@@ -51,5 +51,7 @@ class Benchmark():
         This function should calculate Contextual similarity between generated model predicted text and data from original dataset.
 
         Given reference sentences and corresponding predicted sentences find contextual-similarity using word embeddings (HINDI).
+
+        Cosine Similarity.
         """
         pass
