@@ -8,6 +8,8 @@ import { standardResponse,
         generateLoginToken,
         emailRegexp} from "../helper/helper.js";
 
+
+
 export const login = async (req, res, next) => {
     try {
         if (!(req.headers.cookie)){
@@ -115,7 +117,13 @@ export const signup = async (req, res) => {
 
 export const generate = (req, res) => {
     try {
-        res.status(200).json(standardResponse(200, "Successfully loggedin and accessed."));
+        const {English_text} = req.body;
+        const response = fetch(constants.PYSERVER, {
+            "method": "GET",
+            "Content-Type": "application/json",
+            "body": JSON.stringify({"English_text": English_text})            
+        });
+        res.status(200).json(standardResponse(200, "Successfully Translated", response));
     }
     catch (error) {
         res.status(400).json(standardResponse(400, "Couldn't make through it."))
@@ -149,3 +157,51 @@ export const verify = async (req, res) => {
         res.status(500).json(standardResponse(500,"Internal server issue"));
     }
 }
+/*
+export async function forgotPassword(req, res) {
+	try {
+		const { email } = req.body;
+
+		const user = await UserModel.findOne({ email }).exec();
+
+		if (!user || !user._id)
+			return res
+				.status(401)
+				.json(
+					standardResponse(401, 'Cannot authenticate!', null)
+				);
+        
+		const identifierCode = Buffer.from(
+			`${user.id}___${user.password}`
+		).toString('base64');
+
+		await sendMail({
+			toAddresses: validator.normalizeEmail(user.email),
+			text: `Hello ${user.name}.
+		You can use this link to update the password for your account.
+
+        Regards,
+        Web Bots, Caarve.it.
+      `,
+	  		html: `Hello ${user.name},
+      <br>You can use this <a href="${process.env.CLIENT_HOST}/users/password/new?identifierCode=${identifierCode}" target="_blank">link</a> to update the password for your account.
+      <br><br><br>Regards, <br>Web Bots, ByteLinguists.`,
+			subject: 'ByteLinguists New Password',
+		});
+
+		return res
+			.status(200)
+			.json(standardResponse(200, 'OK', { identifierCode }));
+	} catch (e) {
+		return res
+			.status(500)
+			.json(
+				standardResponse(
+					500,
+					'Something went wrong. Error Logging In.',
+					null
+				)
+			);
+	}
+}
+*/

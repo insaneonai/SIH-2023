@@ -6,6 +6,16 @@ import { createTransport } from 'nodemailer';
 
 export const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
+export const SendTranslateRequest = function (){
+	try{
+		fetch("")
+	}
+
+	catch (error){
+
+	}
+}
+
 export const generateAccessToken = function () {
 	try{
         const token = randomUUID();
@@ -16,6 +26,8 @@ export const generateAccessToken = function () {
 		throw "Error Hashing accesstoken.";
 	}
 };
+
+
 
 export const sendVerificationLink = function (email, authCode) {
 	try {

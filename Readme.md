@@ -1,101 +1,41 @@
 
-# ByteLinguists Translation API
-
-This project is part of SIH hackathon where we develop Language Translation tool from English to Hindi that is served as an scalable API.
+# English to Hindi Translator with 8-bit Quantization
 
 
-
-## Appendix
-
-**Team Name:** ByteLinguists\
-**PS CODE:** 1301\
-**Ministry:** Ministry of power
+This repository contains the backend code for authentication, email verification, and cookie validation in Node.js, along with a Python server script for a Transformer model that translates English to Hindi and performs inference using 8-bit quantization.
 
 
-
-## Project Structure
-├── **NodeServer/**\
-│   └── Node Server for Authenticating and processing API reqs.\
-├── **PyServer/**\
-│   └── Server that runs the language model in GPU.\
-├── **UI/**\
-│   └── Front end interface for Manual API calls.\
-|── **Benchmark/**\
-│   └── Dataset and benchmarking\
-|── **LoadTest/**\
-│   └── LoadTest files using Locust\
-└── Readme.md
+# Features
 
 
-## Features
+- **Authentication**: Secure user authentication system implemented using Node.js.
+- **Email Verification**: Email verification system to ensure the validity of user email addresses.
 
-- API for translating from english to Hindi.
-- API Authentication and Oauth support using google.
-- GPU deployment of API using vllm or HF inference server.
-- UI interface for manual access.
-- Easy integration with JS scripts **<optional>**
+- **Cookie Validation**: Secure validation of cookies to maintain user sessions.
+
+- **English to Hindi Translation**: Utilizes a Transformer model for translating text from English to Hindi.
+
+- **8-bit Quantization**: Implements 8-bit quantization to reduce the model size and improve inference speed.
 
 
 
-## API Reference
+## Tech Stack
 
-#### Generate API token.
+**Express.js:** Web application framework for Node.js used to handle HTTP requests.
 
-```http
-  POST /api/token/generate
-```
+**Nodejs:** Backend server implementation for authentication and cookie validation.
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `username` | `string` | **Required**. Username of User.|
-|  `password` | `string` | **Required**. Password provided by User.|
+**Python**: Scripting language used for implementing the Transformer model and server.
 
-#### Revoke API token
+**PyTorch**: Deep learning framework used for implementing the Transformer model.
 
-```http
-  GET /api/token/revoke
-```
+**Transformers**: Library providing pre-trained Transformer models.
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `API Token`      | `string` | **Required**. Revokes the API token.|
-
-```http
-  GET /api/token/isvalid
-```
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `API Token`      | `string` | **Required**. Checks if given token is valid |
-
-```http
-  GET /api/auth/callback
-
-```
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token`      | `string` | **Required**. callback for Email verification and returns API key to Email.|
-
-```http
-  GET /api/generate/
-```
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Access Token`      | `string` | **Required**.|
-| `Text`               |   `string` | **Required**|
-
-```http
-  GET /api/auth/Oauthcallback
-
-  Callback for Oauth Login.
-```
-
-```http
-  GET /api/token/getOauthURL
-
-  Redirects user to OauthConsent Screen.
-```
+**8-bit Quantization(BitsandBytes)**: Technique used to reduce model size and improve inference speed.
 
 
 
 
+## Demo Video
 
+https://www.youtube.com/watch?v=ljEQCkDxMKc

@@ -17,6 +17,12 @@ router.post(
     "/login",
     login);
 
+/*
+router.get(
+    '/forgot-password',
+    forgotPassword
+)*/
+
 router.post(
     '/resendCode',
     resendAuthCode

@@ -1,6 +1,6 @@
 venv/
 node_modules/
-
+UI/
 # Byte-compiled / optimized files
 __pycache__/
 *.pyc

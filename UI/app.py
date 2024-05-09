@@ -11,5 +11,3 @@ st.header("ByteLinguists Translation app")
 st.text_area("English Text", key="english", placeholder="Please enter text in English")
 st.text_area("Hindi Text", key="hindi", placeholder="Please enter text in Hindi",disabled=True)
 st.button('Translate ⚡', on_click=translate, args=[st.session_state['english']])
-
-st.write(st.session_state)

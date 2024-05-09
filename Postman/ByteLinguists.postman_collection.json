@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "738a4b28-8d40-455b-b86b-9242fb6e1b8c",
+		"name": "ByteLinguists",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19839676"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jeyadevan@student.tce.edu\",\r\n    \"password\": \"123456789@Jd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/signup"
+			},
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jeyadevan@student.tce.edu\",\r\n    \"password\": \"123456789@Jd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/signup"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-GvnUdRFyoIxaimQGNpPd0LbhQ34\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 14:08:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"msg\": \"User account created successfully.\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "Email Already In Use",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jeyadevan@student.tce.edu\",\r\n    \"password\": \"123456789@Jd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/signup"
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "129"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"81-W9p16YBcr6IigkRZsnq7HXlRZ1g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 14:11:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 409,\n    \"msg\": \"Email already in use. Please use a different email address or proceed with the password reset.\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "User Not Verified",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jeyadevan@student.tce.edu\",\r\n    \"password\": \"123456789@Jd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/login"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-6Zjyhopg7Md5Mz/LMivqOGqFNoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 14:11:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 403,\n    \"msg\": \"User not verified. Please sign up or verify your account to proceed.\"\n}"
+				},
+				{
+					"name": "Successful Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jeyadevan@student.tce.edu\",\r\n    \"password\": \"123456789@Jd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authentication=j%3A%7B%22LoginToken%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleGlzdGluZ1VzZXIiOnsiX2lkIjoiNjYzY2RhMjU2N2RkMDdmNGJhZDc0NTMyIiwiZW1haWwiOiJqZXlhZGV2YW5Ac3R1ZGVudC50Y2UuZWR1IiwicGFzc3dvcmQiOiIkMmIkMTAkaU9ab3BvUTlzdWtqNlRlbVVhNThRdW8zbnJNN0xpd1cxVkkxRGlpZXo5Z0lCLjBZTDA0UVMiLCJhY2Nlc3NUb2tlbiI6IiQyYiQxMCRsdkFKSDZHOGNSMXFOUzB5ei5RdUNlYXJPZk4ubjRkSWo1ekh1QjN1REsuTVpGSFZDT1MvMiIsImF1dGhDb2RlIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBaQ0k2SWpZMk0yTmtZVEkxTmpka1pEQTNaalJpWVdRM05EVXpNaUlzSW1saGRDSTZNVGN4TlRJMk5EQXpOMzAuRmEwTUZWSzgzc1pKVEkzOHhkaVJWNGxsZ3RPaWZHS0t4ZzVJQnJjNy14USIsImlzVmVyaWZpZWQiOnRydWUsImlzT2F1dGgiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA5VDE0OjEzOjU4LjAwOFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA5VDE0OjE0OjUxLjYzNVoiLCJfX3YiOjB9LCJpYXQiOjE3MTUyNjQxMTAsImV4cCI6MTcxNTM1MDUxMH0.MyAEqiZ0rCk0sDaDdvas0di2FFZ_Cfp-xAEF3mpefpc%22%7D; Path=/; Expires=Fri, 10 May 2024 14:15:10 GMT; HttpOnly; Secure"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-AtyMpJM+neNKaXkF0Rv91HwBGc8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 14:15:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"msg\": \"Logged In successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Verify",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Account Verified",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/verify?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2NkYTI1NjdkZDA3ZjRiYWQ3NDUzMiIsImlhdCI6MTcxNTI2NDAzN30.Fa0MFVK83sZJTI38xdiRV4llgtOifGKKxg5IBrc7-xQ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "auth",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2NkYTI1NjdkZDA3ZjRiYWQ3NDUzMiIsImlhdCI6MTcxNTI2NDAzN30.Fa0MFVK83sZJTI38xdiRV4llgtOifGKKxg5IBrc7-xQ"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-6e6mnAVcGEJ9WdQKBuXxTt/Qbio\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 14:14:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"msg\": \"Account verified successfully\"\n}"
+				}
+			]
+		}
+	]
+}
